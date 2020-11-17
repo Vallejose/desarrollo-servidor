@@ -9,6 +9,19 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'pk.eyJ1Ijoic3ZhbGxlIiwiYSI6ImNraGdtaDc2djAwMXkyc205dXdxeWZ4M3YifQ.zo7KHMLTCKdCZVntvkgG6Q'
 }).addTo(mymap);
 
+/*
 var markerFortaleza = L.marker([-34.8884468, -56.2602121, 17]).addTo(mymap);
 var markerEstadio = L.marker([-34.8945332, -56.1530176, 17]).addTo(mymap);
 var markeFaro = L.marker([-34.937289, -56.1600945, 16]).addTo(mymap);
+*/
+
+$.ajax({
+    dataType: "json",
+    url: "api/bicicletas",
+    success: function(result) {
+        console.log(result);
+        result.bicicletas.forEach(function(bici) {
+            L.marker(bici.ubicacion, { title: bici.id }).addTo(mymap);
+        });
+    }
+})
