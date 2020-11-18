@@ -34,10 +34,12 @@ Bicicleta.removeById = function(aBiciId) {
     }
 }
 
+/*
 var a = new Bicicleta(1, 'rojo', 'urbana', [-34.8884468, -56.2602121, 17]);
 var b = new Bicicleta(2, 'blanca', 'urbana', [-34.8945332, -56.1530176, 17]);
 
 Bicicleta.add(a);
 Bicicleta.add(b);
 
+*/
 module.exports = Bicicleta;
